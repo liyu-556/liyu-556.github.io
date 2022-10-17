@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>计算题</title>
+  
+ </head>
+ <style>
+body{
+	padding:200px;
+	font-size:1.5em;
+	text-align:center;
+}
+input{
+	font-size:1em;
+	margin:10px;
+}
+ </style>
+ <body>
+  <div>
+   <input id="setnum1" type="text">
+	<span id="add">+</span>
+	<input id="setnum2" type="text">
+  </div>
+<div id="answer">
+A:<input type="button" value="10" id="A">
+B:<input type="button" value="10" id="B">
+C:<input type="button" value="10" id="C">
+D:<input type="button" value="10" id="D">
+</div>
+<input type="button" value="下一题" id="E" onclick="test()">
+<script>
+document.getElementById("E").onclick();
+function test(){
+	var setnum1=parseInt(10 * Math.random());
+	var setnum2=parseInt(10 * Math.random());
+	var getnum1=document.querySelector("input#setnum1");
+	var getnum2=document.querySelector("input#setnum2");
+	getnum1.value=setnum1;
+	getnum2.value=setnum2;
+	var arr=document.querySelectorAll("div#answer input");
+		for(i=0;i<4;i++){
+			var answer=parseInt(20 * Math.random());
+			arr[i].value=answer;
+			arr[i].onclick= function(){
+			var answer=setnum1+setnum2;
+			var sel= parseInt(this.value);
+			if(sel===answer){
+				alert("true");
+			}else{
+			alert("flase");
+			}
+		};//ends of onclick
+	}
+		var choose=Math.floor(Math.random()*4)
+		arr[choose].value=setnum1+setnum2;}
+</script>
+ </body>
+</html>
